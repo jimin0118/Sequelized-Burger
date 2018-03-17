@@ -1,0 +1,46 @@
+
+.input-group {
+  text-align: center; 
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 30px;
+  width: 500px;
+  margin: 5% 0 0 33%;
+}
+
+body {
+  background-image: url("https://i.imgur.com/JK4VLYl.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.form-control {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 2% 1% 1% 2%;
+  margin: 5% 25% 5% 20%;  
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+
+form{
+  margin-bottom: 30px;
+}
+
+#description{
+  font-family: 'Eczar', serif;
+  font-weight: bold;
+  color: gray;
+  text-align: center;
+}
+
+@media screen and (min-width: 900px){
+  #questions{
+    padding: 0 15%;
+  }
+}

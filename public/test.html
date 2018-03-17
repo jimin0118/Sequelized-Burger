@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Burger</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <div class="input-group mb-3" id=container>
+        <h5 class="title">Eat-Da-Burger!</h5>
+        <p class="text">Enter a burger you want to eat Click the "Submit" Button!</p>
+        <input type="text" class="form-control" placeholder="Buger Name" aria-label="Buger Name" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="submitBtn">Submit</button>
+        </div>
+    </div>
+
+    <script>
+    $('#submitBtn').click((event) => {
+        event.preventDefault();
+        const burger_name = $('#burger_name').val()
+
+        $.ajax({
+            type: 'POST',
+            url: '/',
+            data: { burger_name: burger_name }
+        }).then(function() {
+            location.reload()
+        })
+    })
+
+    $('.devour-btn').click((event) => {
+        event.preventDefault();
+        console.log('clicked!')
+        const id = $(event.currentTarget).attr('data-id')
+        console.log(id)
+
+        $.ajax({
+            type: 'PUT',
+            url: '/',
+            data: { id: id }
+        }).then(function() {
+            location.reload()
+        })
+    })
+    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="./assets/js/test.js"></script>
+</body>
+
+</html>
